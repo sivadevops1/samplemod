@@ -1,11 +1,11 @@
 pipeline {
-    agent { docker { image 'maven:3.3.3' } }
-    // agent - none
+    // agent { docker { image 'maven:3.3.3' } }
+    agent - none
     // agent { docker { image 'python:3.5.1' } }
     stages {
         stage('build') {
             steps {
-                sh 'mvn --version'
+                cd 'java-source'
                 sh 'mvn compile'
             }
         }
