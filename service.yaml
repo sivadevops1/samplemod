@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demov1-service
+  labels:
+    run: demov1-service
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: demov1-deployment

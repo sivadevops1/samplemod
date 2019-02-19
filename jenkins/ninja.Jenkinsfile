@@ -23,12 +23,12 @@ pipeline {
 	stage('Docker Integration to Hub') {
       steps {
 	    script {
-		  sh 'sudo docker build -t sivasunku/demo.v1 .'
-		  /*sh "docker login --username=$env.username --password=$env.password"*/
-		  sh 'docker push sivasunku/demo.v1'
+		  sh 'docker build -t rakeshraheja89/project .'
+		  sh "docker login --username=$env.username --password=$env.password"
+		  sh 'docker push rakeshraheja89/project'
 		}
       }
-   	} /* Docker build and integration Ends */
+   	} /* Python Build ends */
 	
 	stage('Deploy to K8') {
       steps {

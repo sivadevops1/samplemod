@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demov1-deployment
+spec:
+  selector:
+    matchLabels:
+      run: demov1-deployment
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: demov1-deployment
+    spec:
+      containers:
+      - name: demov1-container
+        image: sivasunku/demo.v1:latest
+        ports:
+        - containerPort: 80

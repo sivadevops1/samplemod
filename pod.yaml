@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: demov1-pod
+spec:
+  containers:
+  - name: demov1
+    image: sivasunku/demo.v1:latest
+    ports:
+    - containerPort: 80
+
