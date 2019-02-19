@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       run: demov1-deployment
-  replicas: 2
+  replicas: 5
   template:
     metadata:
       labels:

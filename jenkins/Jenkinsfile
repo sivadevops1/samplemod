@@ -11,14 +11,6 @@ pipeline {
       }
    	} /* code checkout ends */
 	
-	/*This will get a Python image and build the new docker image */
-	stage('Python Build') {
-      steps {
-	    script {
-		  checkout scm
-		}
-      }
-   	} /* Python Build ends */
   	
 	stage('Docker Integration to Hub') {
       steps {
