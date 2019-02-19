@@ -31,12 +31,16 @@ pipeline {
    	} /* Docker build and integration Ends */
 	
 	stage('Deploy to K8') {
-      steps {
+/*      steps {
 	  kubernetesDeploy (
         kubeconfigId: 'kubeconfig',
         configs: 'application.yaml',
         enableConfigSubstitution: false
         )
+      } */
+      steps {
+        sh 'kubectl apply -f ./deployment.yaml'
+        sh 'kubectl apply -f ./service.yaml'
       }
     } /* Kubernetes ends */
  
